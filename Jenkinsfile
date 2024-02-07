@@ -2,12 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Install and Build') {
+        stage('Build') {
             steps {
                 script {
-                    sh 'apt-get update && apt-get install -y docker.io'
+                    def dockerPath = tool 'Docker'
+                    env.PATH = "${dockerPath}/bin:${env.PATH}"
                     sh 'docker --version'
-                    // Continue with your Docker-related commands
                 }
             }
         }
