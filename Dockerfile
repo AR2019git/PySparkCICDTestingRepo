@@ -10,7 +10,7 @@ RUN apt-get update && \
 	apt-get -y install sudo zip awscli
 
 RUN apt-get install -q -y openjdk-8-jdk && \
-    apt-get install -y python3-pip python3.6
+    apt-get install -y python3-pip python3.7
 
 RUN pip3 install --upgrade pip && \
     pip3 install pipenv
