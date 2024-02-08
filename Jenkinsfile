@@ -3,14 +3,7 @@ pipeline {
   args "-u jenkins"}
   }
   stages {
-        stage('Install Python') {
-            steps {
-                script {
-                    // Install Python 3.7 using a package manager (e.g., apt-get)
-                    sh 'pip3 install python'
-                }
-            }
-        }
+  
     stage("prepare") {
       steps {
         script{
