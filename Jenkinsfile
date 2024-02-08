@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script {
                     // Install Python 3.7 using a package manager (e.g., apt-get)
-                    sh 'sudo apt-get update && sudo apt-get install -y python3.7'
+                    sh 'pip3 install python'
                 }
             }
         }
