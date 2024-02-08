@@ -11,9 +11,6 @@ pipeline {
                 }
             }
         }
-      
-    }
-
     stage("prepare") {
       steps {
         script{
