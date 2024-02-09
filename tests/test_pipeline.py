@@ -28,6 +28,8 @@ def test_pipeline_transform_with_sample(testbed: SparkETLTests):
     .. seealso:: :class:`SparkETLTests`
 
     """
+
+    print('in test_pipeline.py --> test_pipeline_transform_with_sample')
     # Given - getting the input dataframes
     inc_df: DataFrame = testbed.dataframes['page_views']
     prev_df: DataFrame = testbed.dataframes['soyel_db.user_pageviews']
@@ -48,6 +50,7 @@ def test_pipeline_extract_mock_calls(testbed: SparkETLTests):
     .. seealso:: :class:`SparkETLTests`
 
     """
+    print('in test_pipeline.py --> test_pipeline_extract_mock_calls')
     # When - calling the extract method with mocked spark and test config
     pipeline.extract(spark=testbed.mock_spark,
                      config=testbed.config,
@@ -68,6 +71,7 @@ def test_pipeline_load_mock_calls(testbed: SparkETLTests):
     .. seealso:: :class:`SparkETLTests`
 
     """
+    print('in test_pipeline.py --> test_pipeline_load_mock_calls')
     # When - calling the extract method with mocked spark and test config
     pipeline.load(df=testbed.mock_df, config=testbed.config, logger=testbed.config)
     # Then - introspecting the spark method call
@@ -83,6 +87,7 @@ def test_run_integration(testbed: SparkETLTests):
     .. seealso:: :class:`SparkETLTests`
 
     """
+    print('in test_pipeline.py --> test_run_integration')
     # Given
     with patch('jobs.pipeline.load') as mock_load:
         with patch('jobs.pipeline.extract') as mock_extract:
