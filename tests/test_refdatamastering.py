@@ -305,8 +305,8 @@ def test_mastereferencedata_negative(spark_fixture):
 
 # COMMAND ----------
 
-test_mastereferencedata_positive(spark_fixture)
-test_mastereferencedata_negative(spark_fixture)
+#test_mastereferencedata_positive(spark_fixture)
+#test_mastereferencedata_negative(spark_fixture)
 
 # COMMAND ----------
 
