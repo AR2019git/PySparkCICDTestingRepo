@@ -20,6 +20,8 @@ from tests.conftest import SparkETLTests
 from unittest.mock import patch
 from pyspark.sql import DataFrame
 from ddl import schema
+import sys
+
 
 
 def test_pipeline_transform_with_sample(testbed: SparkETLTests):
@@ -30,6 +32,8 @@ def test_pipeline_transform_with_sample(testbed: SparkETLTests):
     """
 
     print('in test_pipeline.py --> test_pipeline_transform_with_sample')
+    sys.stderr.write("in test_pipeline.py --> test_pipeline_transform_with_sample\n")
+    sys.stdout.flush()
     # Given - getting the input dataframes
     inc_df: DataFrame = testbed.dataframes['page_views']
     prev_df: DataFrame = testbed.dataframes['soyel_db.user_pageviews']
