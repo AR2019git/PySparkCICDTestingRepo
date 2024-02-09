@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8
 
-LABEL maintainer="soyel.alam@ucdconnect.ie"
+LABEL maintainer="AR"
 
 RUN apt-get update && \
 	apt-get -y install sudo zip awscli
