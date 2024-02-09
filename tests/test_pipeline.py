@@ -102,7 +102,7 @@ def test_run_integration(testbed: SparkETLTests):
             #status = pipeline.run(spark=testbed.spark,
              #                     config=testbed.config,
              #                    logger=testbed.logger)
-             status=false
+             status=False
             
             # Then
             testbed.assertTrue(status)
