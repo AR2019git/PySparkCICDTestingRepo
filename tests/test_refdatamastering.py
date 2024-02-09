@@ -1,5 +1,5 @@
 # Databricks notebook source
-#pip install pytest
+pip install pytest
 
 # COMMAND ----------
 
@@ -10,7 +10,8 @@
 # COMMAND ----------
 
 import pytest
-from pyspark.testing.utils import assertDataFrameEqual
+#from pyspark.testing.utils import assertDataFrameEqual
+from pandas.testing import assert_frame_equal
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import when
 
@@ -151,7 +152,12 @@ def test_mastereferencedata_positive(spark_fixture):
     print("POSITIVE CASE")
     expected_df = spark.createDataFrame(expected_data)
 
-    assertDataFrameEqual(transformed_df, expected_df)           #use the version Spark 3.5.0
+    #assertDataFrameEqual(transformed_df, expected_df)           #use the version Spark 3.5.0
+
+
+    actual_pdf = transformed_df.toPandas()
+    expected_pdf = expected_df.toPandas()
+    assert_frame_equal(actual_pdf, expected_pdf)
 
 
     print("Pytest has worked successfully.")
@@ -286,8 +292,12 @@ def test_mastereferencedata_negative(spark_fixture):
     #expected_df.display()
 
     
+    actual_pdf = transformed_df.toPandas()
+    expected_pdf = expected_df.toPandas()
+    assert_frame_equal(actual_pdf, expected_pdf)
 
-    assertDataFrameEqual(transformed_df, expected_df)           #use the version Spark 3.5.0
+
+    #assertDataFrameEqual(transformed_df, expected_df)           #use the version Spark 3.5.0
 
 
     print("Pytest has worked successfully.")
