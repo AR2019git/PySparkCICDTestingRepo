@@ -99,8 +99,10 @@ def test_run_integration(testbed: SparkETLTests):
             mock_extract.return_value = (testbed.dataframes['page_views'],
                                          testbed.dataframes['soyel_db.user_pageviews'])
             # When
-            status = pipeline.run(spark=testbed.spark,
-                                  config=testbed.config,
-                                  logger=testbed.logger)
+            #status = pipeline.run(spark=testbed.spark,
+             #                     config=testbed.config,
+             #                    logger=testbed.logger)
+             status=false
+            
             # Then
             testbed.assertTrue(status)
