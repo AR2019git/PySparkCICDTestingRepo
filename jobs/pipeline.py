@@ -29,7 +29,7 @@ def extract(spark: SparkSession, config: Dict, logger) -> Tuple[DataFrame, DataF
     :return: Spark DataFrames.
     :rtype: DataFrame
     """
-    print('in pipeline.py --> extract)
+    print('in pipeline.py --> extract')
     inc_df: DataFrame = spark.read.load(path=config['page_views_path'],
                                         format='csv',
                                         header=True,
@@ -61,7 +61,7 @@ def transform(inc_df: DataFrame, prev_df: DataFrame, config: Dict, logger) -> Da
                                  lit(config['process_date']).alias('last_active')
                                  ])
                          )
-    print('in pipeline.py --> inc_df)
+    print('in pipeline.py --> inc_df')
     # merging the data with historical records
     df_transformed: DataFrame = (inc_df.join(prev_df,
                                              inc_df.email == prev_df.email,
@@ -96,7 +96,7 @@ def load(df: DataFrame, config: Dict, logger) -> bool:
     :return: True
     :rtype: bool
     """
-    print('in pipeline.py --> load)
+    print('in pipeline.py --> load')
     df.write.save(path=config['output_path'], mode='overwrite')
     return True
 
@@ -116,7 +116,7 @@ def run(spark: SparkSession, config: Dict, logger) -> bool:
     """
 
     logger.warn('pipeline is starting')
-    print('in pipeline.py --> run)
+    print('in pipeline.py --> run')
 
     # execute the pipeline
     inc_data, prev_data = extract(spark=spark, config=config, logger=logger)
