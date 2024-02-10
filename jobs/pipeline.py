@@ -1,4 +1,4 @@
-# Copyright 2020 soyel.alam@ucdconnect.ie
+    # Copyright 2020 soyel.alam@ucdconnect.ie
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -129,7 +129,7 @@ def run(spark: SparkSession, config: Dict, logger) -> bool:
     logger.warn('pipeline is complete')
     return True
 
-def mastereferencedata(spark: SparkSession,df: Dataframe) -> Dataframe:
+def mastereferencedata(spark: SparkSession,df: DataFrame) -> DataFrame:
     
     df2 = df.withColumn("Country", when(df["Country"] == "KOREA", "KOR")
                         .when(df["Country"].isin(["US", "United States", "United states of America"]), "USA")
