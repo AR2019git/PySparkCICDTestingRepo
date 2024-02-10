@@ -173,7 +173,7 @@ def mastereferencedata(spark: SparkSession,df: DataFrame) -> DataFrame:
     }]
     
     print('in test_pipeline.py --> test_run_sample')
-    expected_df =.spark.createDataFrame(expected_data)
+    expected_df =spark.createDataFrame(expected_data)
     
     return expected_df
    
