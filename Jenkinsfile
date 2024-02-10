@@ -15,6 +15,7 @@ pipeline {
       steps{
         sh "pipenv run pytest > testlogs.txt"
         sh "more testlogs.txt"
+        sh "echo 'Hello I am here...' "
       }
     }
     stage("prepare artifact"){
