@@ -129,7 +129,7 @@ def run(spark: SparkSession, config: Dict, logger) -> bool:
     logger.warn('pipeline is complete')
     return True
 
-def mastereferencedata(spark: SparkSession,df: DataFrame) -> DataFrame:
+def mastereferencedata(spark: SparkSession,df: DataFrame) -> bool:
     
    """df2 = df.withColumn("Country", when(df["Country"] == "KOREA", "KOR")
                         .when(df["Country"].isin(["US", "United States", "United states of America"]), "USA")
@@ -161,7 +161,7 @@ def mastereferencedata(spark: SparkSession,df: DataFrame) -> DataFrame:
 
 
     return df2
-    """
+   
     expected_data = [
     {
         "Country": "KOR",
@@ -174,6 +174,7 @@ def mastereferencedata(spark: SparkSession,df: DataFrame) -> DataFrame:
     
     print('in test_pipeline.py --> test_run_sample')
     expected_df =spark.createDataFrame(expected_data)
+     """
     
-    return expected_df
+    return True
    
