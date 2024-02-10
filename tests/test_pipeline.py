@@ -136,6 +136,6 @@ def test_run_sample(testbed: SparkETLTests):
     }]
     
     """print('in test_pipeline.py --> test_run_sample')
-    expected_df = testbed.spark.createDataFrame(mock_data)
+    expected_df = testbed.spark.createDataFrame(sample_data)
     """transformed_df =pipeline.mastereferencedata(spark=testbed.spark,df=expected_df)
     testbed.assertTrue(True)
