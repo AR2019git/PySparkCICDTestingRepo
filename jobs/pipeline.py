@@ -131,7 +131,7 @@ def run(spark: SparkSession, config: Dict, logger) -> bool:
 
 def mastereferencedata(spark: SparkSession,df: DataFrame) -> DataFrame:
     
-    df2 = df.withColumn("Country", when(df["Country"] == "KOREA", "KOR")
+   """df2 = df.withColumn("Country", when(df["Country"] == "KOREA", "KOR")
                         .when(df["Country"].isin(["US", "United States", "United states of America"]), "USA")
                         .when(df["Country"] == "France", "FRA")
                         .otherwise(df["Country"])) \
@@ -161,3 +161,6 @@ def mastereferencedata(spark: SparkSession,df: DataFrame) -> DataFrame:
 
 
     return df2
+    """
+    return df
+   
