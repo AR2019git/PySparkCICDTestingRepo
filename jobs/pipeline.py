@@ -129,7 +129,7 @@ def run(spark: SparkSession, config: Dict, logger) -> bool:
     logger.warn('pipeline is complete')
     return True
 
-def mastereferencedata(spark: SparkSession,df: Dataframe) -->Dataframe:
+def mastereferencedata(spark: SparkSession,df: Dataframe) -> Dataframe:
     
     df2 = df.withColumn("Country", when(df["Country"] == "KOREA", "KOR")
                         .when(df["Country"].isin(["US", "United States", "United states of America"]), "USA")
