@@ -135,8 +135,8 @@ def test_run_sample(testbed: SparkETLTests):
         "POLICY_STATUS": "A"
     }]
     
-    """print('in test_pipeline.py --> test_run_sample')
+    print('in test_pipeline.py --> test_run_sample')
     expected_df = testbed.spark.createDataFrame(sample_data)
-    transformed_df =pipeline.mastereferencedata(spark=testbed.spark,df=expected_df)
+    """transformed_df =pipeline.mastereferencedata(spark=testbed.spark,df=expected_df)
     """
     testbed.assertTrue(True)
