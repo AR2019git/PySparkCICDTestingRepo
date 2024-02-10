@@ -162,5 +162,18 @@ def mastereferencedata(spark: SparkSession,df: DataFrame) -> DataFrame:
 
     return df2
     """
-    return df
+    expected_data = [
+    {
+        "Country": "KOR",
+        "POLICY_HOLDER_GENDER": "M",
+        "CURRENCY": "KRW",
+        "PROD_CODE": "Term Life",
+        "TRANS_CODE": "PEX",
+        "POLICY_STATUS": "A"
+    }]
+    
+    print('in test_pipeline.py --> test_run_sample')
+    expected_df =.spark.createDataFrame(expected_data)
+    
+    return expected_df
    
