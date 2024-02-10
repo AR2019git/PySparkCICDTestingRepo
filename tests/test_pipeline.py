@@ -114,5 +114,39 @@ def test_run_sample(testbed: SparkETLTests):
     .. seealso:: :class:`SparkETLTests`
 
     """
+
+    sample_data = [
+    {
+        "Country": "KOR",
+        "PatientID": 1,
+        "age": 39,
+        "POLICY_HOLDER_GENDER": "male",
+        "bmi": 23.2,
+        "bloodpressure": 91,
+        "region": "southeast",
+        "TRAN_AMT": 1121.87,
+        "CURRENCY": "KRW",
+        "PROD_CODE": "TL",
+        "TRANS_CODE": "PRM",
+        "POLICY_STATUS": "ACTIVE"
+    }]
+        
+    expected_data = [
+    {
+        "Country": "KOR",
+        "PatientID": 1,
+        "age": 39,
+        "POLICY_HOLDER_GENDER": "M",
+        "bmi": 23.2,
+        "bloodpressure": 91,
+        "region": "southeast",
+        "TRAN_AMT": 1121.87,
+        "CURRENCY": "KRW",
+        "PROD_CODE": "Term Life",
+        "TRANS_CODE": "PEX",
+        "POLICY_STATUS": "A"
+    }]
     print('in test_pipeline.py --> test_run_sample')
+    expected_df = spark.createDataFrame(mock_data)
+    transformed_df =pipeline.mastereferencedata(spark=testbed.spark,df=sample_data)
     testbed.assertTrue(True)
