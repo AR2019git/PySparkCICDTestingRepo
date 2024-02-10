@@ -13,7 +13,8 @@ pipeline {
     }
     stage("test"){
       steps{
-        sh "pipenv run pytest"
+        sh "pipenv run pytest > testlogs.txt"
+        sh "more testlogs.txt"
       }
     }
     stage("prepare artifact"){
