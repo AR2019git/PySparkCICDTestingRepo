@@ -14,7 +14,7 @@ pipeline {
     stage("test"){
       steps{
         echo 'This is the test stage - Test'
-        sh 'pipenv run pytest --html=Sample_report.html'
+        sh 'pipenv run pytest'
       }
     }
     stage("prepare artifact"){
