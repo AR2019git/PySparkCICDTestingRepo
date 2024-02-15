@@ -20,8 +20,7 @@ pipeline {
     stage("prepare artifact"){
       steps{
       echo 'This is the make part but commented'
-      """sh "make build"
-      }
+        }
     }
     
   }
