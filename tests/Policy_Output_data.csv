@@ -1,0 +1,4 @@
+Country,PatientID,age,POLICY_HOLDER_GENDER,bmi,bloodpressure,region,TRAN_AMT,CURRENCY,PROD_CODE,TRANS_CODE,POLICY_STATUS
+KOR,1,39,M,23.2,91,southeast,1121.87,KRW,Term Life,PEX,A
+KOR,2,24,M ,30.1,87,southeast,1131.51,KRW,Term Life,PEX,I
+USA,3,,O,33.3,82,southeast,1135.94,USD,Term Life,PEX,I
