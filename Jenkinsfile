@@ -24,4 +24,9 @@ pipeline {
     }
     
   }
+  post {
+            always {
+                  publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: false, reportDir: '', reportFiles: 'testreport.html', reportName: 'Testing Result report', reportTitles: 'Testing Result report', useWrapperFileDirectly: true])
+            }
+      }
 }
