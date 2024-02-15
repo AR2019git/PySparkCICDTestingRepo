@@ -10,7 +10,7 @@ pyspark = "==2.3.2"
 pytest = "==5.4.3"
 pytest-cov = "*"
 pytest-pep8 = "*"
-pytest-html="*"
+pytest-html ="*"
 pandas = "*"
 
 [requires]
