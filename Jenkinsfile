@@ -19,5 +19,11 @@ pipeline {
     }
     
   }
+  post { 
+        always { 
+            echo 'I will always say Hello again!'
+            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'testreport.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+        }
+    }
 
 }
