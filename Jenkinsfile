@@ -26,7 +26,7 @@ pipeline {
   }
   post {
             always {
-          publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'testreport.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+          publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'htmlreports/HTML_20Report', reportFiles: 'testreport.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
             }
 
       }
