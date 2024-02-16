@@ -17,17 +17,7 @@ pipeline {
         sh 'pipenv run pytest -v --html=testreport.html'
       }
     }
-    stage("prepare artifact"){
-      steps{
-      echo 'This is the make part but commented'
-        }
-    }
     
   }
-  post {
-            always {
-          publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'testreport.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
-            }
 
-      }
 }
